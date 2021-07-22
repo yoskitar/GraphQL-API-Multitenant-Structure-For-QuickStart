@@ -1,0 +1,1 @@
+# GraphQL-API-Multitenant-Structure-For-QuickStart
