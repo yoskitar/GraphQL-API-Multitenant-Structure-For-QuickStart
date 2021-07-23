@@ -33,7 +33,4 @@ type Mutation {
 }
 `;
 
-//Control [0:update, 1:revoke]
-//In editUserAuthCredentialsFields not allowed password
-
 module.exports = schema;

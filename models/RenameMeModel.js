@@ -42,5 +42,17 @@ renameMeModelSchema.methods.renameCompareMethod = async function(param) {
     return compare;
 };
 
-const RenameMeModel = mongoose.model('RenameMeModel', renameMeModelSchema);
+const useDbOptions = {
+    //ensures connections to the same databases are cached
+    useCache: true,
+    //remove event listeners from the main connection
+    noListener: true
+}
+const myDB = mongoose.connection.useDb('RenameMeModelDB', useDbOptions);
+
+const RenameMeModel = myDB.model('RenameMeModel', renameMeModelSchema);
 module.exports = RenameMeModel;
+
+
+
+    
